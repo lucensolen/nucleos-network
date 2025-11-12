@@ -81,4 +81,26 @@
   });
 
   function readAsDataURL(file){ return new Promise(res=>{ const fr=new FileReader(); fr.onload=()=>res(fr.result); fr.readAsDataURL(file); }); }
+
+function renderRecent() {
+  const list = document.getElementById("recentList");
+  if (!list) return;
+  // Gather all reflections from all subjects
+  const subjects = Object.entries(state.subjects || {});
+  const entries = subjects.flatMap(([subject, arr]) =>
+    (arr || []).map(r => ({...r, subject}))
+  );
+  // Render last 5 reflections, newest first
+  const recent = entries.sort((a,b)=>b.ts - a.ts).slice(0,5);
+  list.innerHTML = recent.length
+    ? recent.map(e => `
+        <div class="entry">
+          <strong>${escapeHtml(e.subject)}</strong> —
+          ${new Date(e.ts).toLocaleString()}<br>
+          ${escapeHtml(e.text || '')}
+        </div>
+      `).join("")
+    : "<p class='muted'>No reflections yet.</p>";
+}
+
 })();
