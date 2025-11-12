@@ -3,74 +3,74 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>LearnLume</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Learn Lume — Beam</title>
+  <link rel="stylesheet" href="./style.css"/>
 </head>
 <body>
   <header class="topbar">
-    <div class="left">
-      <div class="orb small" id="orbSmall"></div>
-      <h2>LearnLume</h2>
+    <div class="brand">
+      <div class="orb" id="orb"></div>
+      <h1>LearnLume</h1>
     </div>
-    <div class="right">
-      <label class="switch" title="Sync with Lucen Core">
+    <div class="syncbox">
+      <label class="switch">
         <input id="syncToggle" type="checkbox">
         <span class="slider"></span>
       </label>
-      <span class="syncLabel" id="syncLabel">Sync Off</span>
-      <span class="dot" id="bridgeDot" title="Flow indicator">•</span>
+      <span id="syncLabel" class="muted">Sync Off</span>
+      <span id="bridgeDot" class="dot">•</span>
     </div>
   </header>
 
-  <main class="page active">
-    <section class="card">
-      <div class="row" style="justify-content:space-between;align-items:center">
-        <div>
-          <h3 id="hello">Hello — let’s learn by living.</h3>
-          <p class="muted">Choose a subject, reflect, and attach a photo or file.</p>
-        </div>
-        <button id="quickAddSubject" class="soft">+ Subject</button>
-      </div>
-
+  <main class="container">
+    <!-- Home: Lens on main + subject select (old layout preserved) -->
+    <section id="home" class="card">
+      <h2>Lens</h2>
       <div class="row">
-        <label for="subjectSelect">Subject</</label>
+        <label>Subject</label>
         <select id="subjectSelect"></select>
-        <button id="openSubjectBtn" class="soft">Open Page</button>
+        <button class="btn glow" id="openSubjectBtn">Open Subject</button>
+        <button class="btn" id="quickAddSubject">+ Subject</button>
       </div>
 
-      <textarea id="logText" rows="5" placeholder="What did you notice, do, explore?"></textarea>
+      <textarea id="logText" rows="4" placeholder="Log a reflection…"></textarea>
+
+      <div class="row files">
+        <label class="btn filelabel">Attach
+          <input id="fileInput" type="file" multiple hidden>
+        </label>
+        <button class="btn glow" id="logBtn">Log</button>
+      </div>
+    </section>
+
+    <!-- Advice page (unchanged structure) -->
+    <section id="advice" class="card">
+      <h2>Advice</h2>
+      <div id="adviceBody" class="muted">Write a few reflections; patterns will appear here.</div>
+    </section>
+
+    <!-- Evidence export page (unchanged structure) -->
+    <section id="evidence" class="card">
+      <h2>Evidence</h2>
       <div class="row">
-        <input id="fileInput" type="file" multiple accept="image/*,.pdf,.doc,.docx,.txt"/>
-        <button id="logBtn" class="primary">Log Reflection</button>
+        <button class="btn glow" id="exportBtn">Download Evidence</button>
       </div>
-    </section>
-
-    <section class="card">
-      <h4>Recent</h4>
-      <div id="recentList" class="entries"></div>
-    </section>
-
-    <section class="card">
-      <h3>Advice</h3>
-      <ul class="advice">
-        <li>Short reflections often become strong evidence — log little and often.</li>
-        <li>Photos of everyday learning (cooking, building, reading signs) matter.</li>
-        <li>Celebrate wins; note blockers; follow energy instead of forcing it.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h3>Evidence</h3>
-      <p class="muted">Download your reflections, attachments (as links), and timestamps.</p>
-      <button id="exportBtn" class="primary">Download Evidence</button>
+      <div id="recentWrap">
+        <h3>Recent</h3>
+        <div id="recentList"></div>
+      </div>
     </section>
   </main>
 
-  <footer class="footer-note">
-    <p>Powered by the Clarity Movement © 2025</p>
+  <footer class="footer">
+    <nav class="tabs">
+      <button class="tab active" data-tab="home">Home</button>
+      <button class="tab" data-tab="advice">Advice</button>
+      <button class="tab" data-tab="evidence">Evidence</button>
+    </nav>
+    <small class="muted">Powered by the Clarity Movement ©2025</small>
   </footer>
 
-  <script src="../lucen.signal.js"></script>
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
