@@ -17,10 +17,7 @@ p {
 .beam{height:4px;border-radius:999px;margin-top:10px;background:linear-gradient(90deg, rgba(255,212,77,0), rgba(255,212,77,.95), rgba(255,212,77,0));opacity:.9;animation:loveflow 2.2s linear infinite;filter:blur(.35px)}
 @keyframes loveflow{0%{background-position:-220px 0}100%{background-position:220px 0}}
 .page{display:none;max-width:1000px;margin:0 auto;padding:0 16px 20px}
-.page.active {
-  display: block; /* ✅ this brings your cards back */
-  padding: 0 12px;
-}
+.page.active{display:block}
 .card {
   background: var(--card);
   border-radius: 12px;
