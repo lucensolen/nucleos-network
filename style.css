@@ -18,6 +18,7 @@ p {
 @keyframes loveflow{0%{background-position:-220px 0}100%{background-position:220px 0}}
 .page{display:none;max-width:1000px;margin:0 auto;padding:0 16px 20px}
 .page.active {
+  display: block; /* ✅ this brings your cards back */
   padding: 0 12px;
 }
 .card {
