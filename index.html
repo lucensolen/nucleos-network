@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>The Beam Network — LearnLume</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="hero">
+    <div class="title">
+      <div class="orb"></div>
+      <div>
+        <h1>The Beam Network</h1>
+        <p class="muted">Your personal cockpit within the Clarity Movement</p>
+      </div>
+    </div>
+    <div id="lovePulse" class="beam"></div>
+  </header>
+
+  <section id="intro" class="page active">
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>Generate your Beam ID and step into your cockpit. Your name stays on this device. Sync connects you to Lucen Core so your learning can flow across apps.</p>
+      <div class="row">
+        <label>Name</label>
+        <input id="nameInput" type="text" placeholder="Your name"/>
+      </div>
+      <div class="row">
+        <button id="genBeamBtn" class="soft">Get Beam ID</button>
+        <input id="beamId" type="text" placeholder="XXXX-XXXX" readonly/>
+        <button id="copyBeamBtn" class="soft">Copy</button>
+      </div>
+      <div class="row">
+        <button id="enterBtn" class="primary">Continue</button>
+      </div>
+      <p class="tiny">You can paste your Beam ID on another device to continue.</p>
+    </div>
+
+    <div class="card ethics">
+      <h3>Sync & Ethics</h3>
+      <p>Sync shares your reflections with Lucen Core under your Beam ID so you can receive new tools, gentle prompts, and rewards. You’re always in control — switch Sync off anytime for local‑only use.</p>
+    </div>
+  </section>
+
+  <section id="app" class="page">
+    <header class="topbar">
+      <div class="left">
+        <div class="orb small" id="orbSmall"></div>
+        <h2>Your Cockpit</h2>
+      </div>
+      <div class="right">
+        <label class="switch" title="Sync with Lucen Core">
+          <input id="syncToggle" type="checkbox">
+          <span class="slider"></span>
+        </label>
+        <span class="syncLabel" id="syncLabel">Sync Off</span>
+        <span class="dot" id="bridgeDot" title="Flow indicator">•</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="gates">
+        <article class="gate">
+          <div class="gate-head">
+            <img src="learnlume.svg" alt="" class="icon"/>
+            <div class="grow">
+              <h3>LearnLume</h3>
+              <p class="muted">Reflective learning & evidence field</p>
+            </div>
+            <button id="openLearnLume" class="primary">Open</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="footer-note">
+        <p>Powered by the Clarity Movement © 2025</p>
+      </section>
+    </main>
+  </section>
+
+  <script>window.LUCEN_CORE_API = "https://lucen17-inflo-backend.onrender.com";</script>
+  <script src="lucen.signal.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

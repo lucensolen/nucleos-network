@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>LearnLume</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="left">
+      <div class="orb small" id="orbSmall"></div>
+      <h2>LearnLume</h2>
+    </div>
+    <div class="right">
+      <label class="switch" title="Sync with Lucen Core">
+        <input id="syncToggle" type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="syncLabel" id="syncLabel">Sync Off</span>
+      <span class="dot" id="bridgeDot" title="Flow indicator">•</span>
+    </div>
+  </header>
+
+  <main class="page active">
+    <section class="card">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <div>
+          <h3 id="hello">Hello — let’s learn by living.</h3>
+          <p class="muted">Choose a subject, reflect, and attach a photo or file.</p>
+        </div>
+        <button id="quickAddSubject" class="soft">+ Subject</button>
+      </div>
+
+      <div class="row">
+        <label for="subjectSelect">Subject</</label>
+        <select id="subjectSelect"></select>
+        <button id="openSubjectBtn" class="soft">Open Page</button>
+      </div>
+
+      <textarea id="logText" rows="5" placeholder="What did you notice, do, explore?"></textarea>
+      <div class="row">
+        <input id="fileInput" type="file" multiple accept="image/*,.pdf,.doc,.docx,.txt"/>
+        <button id="logBtn" class="primary">Log Reflection</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h4>Recent</h4>
+      <div id="recentList" class="entries"></div>
+    </section>
+
+    <section class="card">
+      <h3>Advice</h3>
+      <ul class="advice">
+        <li>Short reflections often become strong evidence — log little and often.</li>
+        <li>Photos of everyday learning (cooking, building, reading signs) matter.</li>
+        <li>Celebrate wins; note blockers; follow energy instead of forcing it.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3>Evidence</h3>
+      <p class="muted">Download your reflections, attachments (as links), and timestamps.</p>
+      <button id="exportBtn" class="primary">Download Evidence</button>
+    </section>
+  </main>
+
+  <footer class="footer-note">
+    <p>Powered by the Clarity Movement © 2025</p>
+  </footer>
+
+  <script src="../lucen.signal.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
