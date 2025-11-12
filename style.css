@@ -6,25 +6,14 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
 h1,h2,h3{margin:8px 0}
-p {
-  margin: 4px 0;
-  line-height: 1.35;
-}
-  padding: 8px 12px;
-  margin-bottom: 4px;
-}
+p{margin:8px 0}
+.hero{padding:14px 16px;max-width:1000px;margin:0 auto}
 .title{display:flex;align-items:center;gap:12px}
 .beam{height:4px;border-radius:999px;margin-top:10px;background:linear-gradient(90deg, rgba(255,212,77,0), rgba(255,212,77,.95), rgba(255,212,77,0));opacity:.9;animation:loveflow 2.2s linear infinite;filter:blur(.35px)}
 @keyframes loveflow{0%{background-position:-220px 0}100%{background-position:220px 0}}
 .page{display:none;max-width:1000px;margin:0 auto;padding:0 16px 20px}
 .page.active{display:block}
-.card {
-  background: var(--card);
-  border-radius: 12px;
-  padding: 10px 12px;
-  margin: 6px 0;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
-}
+.card{background:var(--card);border-radius:16px;padding:16px 18px;margin:12px 0;box-shadow:var(--shadow)}
 .ethics{background:linear-gradient(#fff, #fffef7)}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .row label{min-width:80px}
@@ -45,16 +34,12 @@ button.soft{background:linear-gradient(#fff,#f9fafb)}
 .slider:before{content:"";position:absolute;height:22px;width:22px;left:2px;top:2px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
 .switch input:checked + .slider{background:var(--green)}
 .switch input:checked + .slider:before{transform:translateX(20px)}
-.gates{display:grid;gap:8px}
-.gate{background:#fff;border-radius:12px;padding:10px 14px;box-shadow:var(--shadow)}
+.gates{display:grid;gap:12px}
+.gate{background:#fff;border-radius:16px;padding:14px 16px;box-shadow:var(--shadow)}
 .gate-head{display:flex;align-items:center;gap:12px}
 .grow{flex:1}
 .icon{width:36px;height:36px}
-.footer-note {
-  margin-top: 12px;
-  padding-bottom: 8px;
-  font-size: 13px;
-}
+.footer-note{margin-top:16px;text-align:center;color:var(--muted)}
 .orb{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 35% 35%, #fff8cc, #ffd44d 40%, #eab308 75%);box-shadow:0 0 22px 8px rgba(255,212,77,.5);animation:breath 5s ease-in-out infinite}
 .orb.small{width:16px;height:16px;animation:breath 4s ease-in-out infinite}
 @keyframes breath{0%,100%{transform:scale(1);filter:saturate(1)}50%{transform:scale(1.06);filter:saturate(1.15)}}
