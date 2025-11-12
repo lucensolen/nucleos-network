@@ -35,7 +35,7 @@ button.soft{background:linear-gradient(#fff,#f9fafb)}
 .switch input:checked + .slider{background:var(--green)}
 .switch input:checked + .slider:before{transform:translateX(20px)}
 .gates{display:grid;gap:12px}
-.gate{background:#fff;border-radius:16px;padding:14px 16px;box-shadow:var(--shadow)}
+.gate{background:#fff;border-radius:12px;padding:10px 14px;box-shadow:var(--shadow)}
 .gate-head{display:flex;align-items:center;gap:12px}
 .grow{flex:1}
 .icon{width:36px;height:36px}
