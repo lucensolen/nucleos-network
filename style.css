@@ -13,7 +13,7 @@ p{margin:8px 0}
 @keyframes loveflow{0%{background-position:-220px 0}100%{background-position:220px 0}}
 .page{display:none;max-width:1000px;margin:0 auto;padding:0 16px 20px}
 .page.active{display:block}
-.card{background:var(--card);border-radius:16px;padding:10px 14px;margin:8px 0;box-shadow:var(--shadow)}
+.card{background:var(--card);border-radius:12px;padding:10px 14px;margin:8px 0;box-shadow:var(--shadow)}
 .ethics{background:linear-gradient(#fff, #fffef7)}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .row label{min-width:80px}
