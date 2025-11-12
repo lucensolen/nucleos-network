@@ -3,74 +3,88 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Learn Lume — Beam</title>
+  <title>Learn Lume</title>
   <link rel="stylesheet" href="./style.css"/>
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
-      <div class="orb" id="orb"></div>
-      <h1>LearnLume</h1>
+      <img src="./learnlume.svg" alt="Learn Lume" class="logo"/>
+      <h1>Learn Lume</h1>
     </div>
-    <div class="syncbox">
-      <label class="switch">
-        <input id="syncToggle" type="checkbox">
-        <span class="slider"></span>
-      </label>
-      <span id="syncLabel" class="muted">Sync Off</span>
-      <span id="bridgeDot" class="dot">•</span>
-    </div>
+    <div class="beam" id="beam"></div>
+    <div class="badge" id="onlineBadge">Offline</div>
   </header>
 
   <main class="container">
-    <!-- Home: Lens on main + subject select (old layout preserved) -->
-    <section id="home" class="card">
-      <h2>Lens</h2>
-      <div class="row">
-        <label>Subject</label>
-        <select id="subjectSelect"></select>
-        <button class="btn glow" id="openSubjectBtn">Open Subject</button>
-        <button class="btn" id="quickAddSubject">+ Subject</button>
-      </div>
-
-      <textarea id="logText" rows="4" placeholder="Log a reflection…"></textarea>
-
-      <div class="row files">
-        <label class="btn filelabel">Attach
-          <input id="fileInput" type="file" multiple hidden>
-        </label>
-        <button class="btn glow" id="logBtn">Log</button>
+    <section class="welcome" id="welcomeCard">
+      <div class="card glass">
+        <h2>Welcome</h2>
+        <p>Create a lightweight profile to keep your learning flow coherent. You can keep everything on this device, or enable cloud sync.</p>
+        <div class="form-row"><label>Your name</label><input id="profileName" placeholder="Parent/Guardian name"/></div>
+        <div class="form-row"><label>Learner name</label><input id="learnerName" placeholder="e.g., Leo"/></div>
+        <div class="form-row split">
+          <label class="switch"><input type="checkbox" id="syncToggle"/><span>Sync to Cloud</span></label>
+          <small id="syncHint">Local-only (private)</small>
+        </div>
+        <button id="createProfile" class="primary">Create Profile</button>
       </div>
     </section>
 
-    <!-- Advice page (unchanged structure) -->
-    <section id="advice" class="card">
-      <h2>Advice</h2>
-      <div id="adviceBody" class="muted">Write a few reflections; patterns will appear here.</div>
+    <nav class="tabs" id="tabs" hidden>
+      <button data-tab="log" class="active">Log</button>
+      <button data-tab="subjects">Subjects</button>
+      <button data-tab="advice">Advice</button>
+      <button data-tab="evidence">Evidence</button>
+    </nav>
+
+    <section class="panel active" id="log">
+      <div class="card glass">
+        <h2>Log Reflection</h2>
+        <textarea id="lens" rows="4" placeholder="What did we explore today? What did they notice?"></textarea>
+        <div class="chips" id="subjectChips"></div>
+        <div class="row">
+          <input type="file" id="photo" accept="image/*" capture="environment"/>
+          <button id="saveEntry" class="primary">Save</button>
+        </div>
+        <div class="hint" id="saveHint"></div>
+      </div>
     </section>
 
-    <!-- Evidence export page (unchanged structure) -->
-    <section id="evidence" class="card">
-      <h2>Evidence</h2>
-      <div class="row">
-        <button class="btn glow" id="exportBtn">Download Evidence</button>
+    <section class="panel" id="subjects">
+      <div class="card glass">
+        <h2>Subjects</h2>
+        <div class="row">
+          <input id="addSubjectInput" placeholder="Add a subject (e.g., Nature)"/>
+          <button id="addSubjectBtn">Add</button>
+        </div>
+        <ul id="subjectList" class="list"></ul>
       </div>
-      <div id="recentWrap">
-        <h3>Recent</h3>
-        <div id="recentList"></div>
+    </section>
+
+    <section class="panel" id="advice">
+      <div class="card glass">
+        <h2>Advice</h2>
+        <div id="adviceList" class="advice"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="evidence">
+      <div class="card glass">
+        <h2>Evidence</h2>
+        <div class="row">
+          <select id="filterSubject"><option value="">All subjects</option></select>
+          <select id="filterTone"><option value="">All tones</option><option>Reflective</option><option>Directive</option><option>Creative</option></select>
+        </div>
+        <div id="evidenceGrid" class="grid"></div>
+        <div class="row">
+          <button id="exportBtn">Export Beacon</button>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <nav class="tabs">
-      <button class="tab active" data-tab="home">Home</button>
-      <button class="tab" data-tab="advice">Advice</button>
-      <button class="tab" data-tab="evidence">Evidence</button>
-    </nav>
-    <small class="muted">Powered by the Clarity Movement ©2025</small>
-  </footer>
-
+  <script src="../lucen.signal.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
