@@ -13,7 +13,7 @@ p{margin:8px 0}
 @keyframes loveflow{0%{background-position:-220px 0}100%{background-position:220px 0}}
 .page{display:none;max-width:1000px;margin:0 auto;padding:0 16px 20px}
 .page.active{display:block}
-.card{background:var(--card);border-radius:16px;padding:16px 18px;margin:16px 0;box-shadow:var(--shadow)}
+.card{background:var(--card);border-radius:16px;padding:16px 18px;margin:12px 0;box-shadow:var(--shadow)}
 .ethics{background:linear-gradient(#fff, #fffef7)}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .row label{min-width:80px}
@@ -34,7 +34,7 @@ button.soft{background:linear-gradient(#fff,#f9fafb)}
 .slider:before{content:"";position:absolute;height:22px;width:22px;left:2px;top:2px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
 .switch input:checked + .slider{background:var(--green)}
 .switch input:checked + .slider:before{transform:translateX(20px)}
-.gates{display:grid;gap:12px}
+.gates{display:grid;gap:20px}
 .gate{background:#fff;border-radius:16px;padding:14px 16px;box-shadow:var(--shadow)}
 .gate-head{display:flex;align-items:center;gap:12px}
 .grow{flex:1}
